@@ -27,7 +27,7 @@ public class WatchActor extends UntypedActor {
 
     {
         List<Routee> routerList = new ArrayList<Routee>();
-        for (int i = 1; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             ActorRef worker = getContext().actorOf(Props.create(MyWorker.class), "worker_" + i);
             getContext().watch(worker);
             routerList.add(new ActorRefRoutee(worker));
